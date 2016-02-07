@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css" />
         <script>window.$ = window.jQuery = require('./assets/js/jquery-2.2.0.min.js');</script>
         <meta charset="UTF-8">
-        <title>Hello World!</title>
+        <title>Photo Picker v0.1</title>
     </head>
     <body>
         <div class="row">
@@ -28,24 +28,20 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-
+                <button class="btn btn-success load-images">Load!</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="" class="image-preview"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                A - YES, copy that image<br>
+                L - NO, skip that image
             </div>
         </div>
     </body>
-    <script>
-        $(function() {
-            var remote = require('remote');
-
-            $('.browse-source-path').on('click', function() {
-                var dialog = remote.require('electron').dialog;
-                var sourcePath = dialog.showOpenDialog({ properties: [ 'openFile', 'openDirectory' ]});
-                $('.source-path').html(sourcePath);
-            });
-            $('.browse-destination-path').on('click', function() {
-                var dialog = remote.require('electron').dialog;
-                var destinationPath = dialog.showOpenDialog({ properties: [ 'openFile', 'openDirectory' ]});
-                $('.destination-path').html(destinationPath);
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </html>

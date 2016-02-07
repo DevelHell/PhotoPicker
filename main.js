@@ -20,6 +20,9 @@ app.on('window-all-closed', function() {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 app.on('ready', function() {
+    var i = require('./models/imageLoader');
+    console.log(i.salut);
+
     // Create the browser window.
     mainWindow = new BrowserWindow({width: 800, height: 600});
 
